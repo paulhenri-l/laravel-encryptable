@@ -1,10 +1,10 @@
 <?php
 
-namespace PaulhenriL\LaravelEncryptable\Tests\Unit;
+namespace PaulhenriL\LaravelEncryptable\Tests\Feature;
 
 use PaulhenriL\LaravelEncryptable\Tests\TestCase;
 
-class ExampleTest extends TestCase
+class FieldsEncryptionTest extends TestCase
 {
     public function test_the_truth()
     {

@@ -2,7 +2,7 @@
 
 namespace PaulhenriL\LaravelEncryptable;
 
-class Hello
+trait Encryptable
 {
     //
 }
