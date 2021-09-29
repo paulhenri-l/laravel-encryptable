@@ -9,7 +9,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
         parent::resolveApplicationConfiguration($app);
 
         $app->make('config')->set(
-            'app.key', '00000000000000000000000000000000'
+            'app.key',
+            '00000000000000000000000000000000'
         );
     }
 }
