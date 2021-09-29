@@ -5,7 +5,14 @@ namespace PaulhenriL\LaravelEncryptable\Tests\Fakes;
 use Illuminate\Database\Eloquent\Model;
 use PaulhenriL\LaravelEncryptable\Encryptable;
 
-class Hello extends Model
+class Person extends Model
 {
     use Encryptable;
+
+    protected $guarded = [];
+
+    protected $encryptedFields = [
+        'lastname',
+        'email'
+    ];
 }

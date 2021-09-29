@@ -2,15 +2,14 @@
 
 namespace PaulhenriL\LaravelEncryptable\Tests;
 
-use PaulhenriL\LaravelEncryptable\Tests\Concerns\ManagesDatabase;
-
-class TestCase extends \PHPUnit\Framework\TestCase
+class TestCase extends \Orchestra\Testbench\TestCase
 {
-    use ManagesDatabase;
-
-    protected function setUp(): void
+    protected function resolveApplicationConfiguration($app)
     {
-        $this->prepareDbIfNecessary();
-        $this->freshSchema();
+        parent::resolveApplicationConfiguration($app);
+
+        $app->make('config')->set(
+            'app.key', '00000000000000000000000000000000'
+        );
     }
 }
