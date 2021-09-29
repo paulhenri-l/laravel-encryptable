@@ -8,5 +8,4 @@ $finder = \PhpCsFixer\Finder::create()->in([
 
 return (new PaulhenriL\PhpCsConfig\Config())->setRules([
     '@paulhenri-l' => true,
-    'array_syntax' => ['syntax' => 'short'],
 ])->setFinder($finder);
