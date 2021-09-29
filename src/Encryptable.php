@@ -17,7 +17,7 @@ trait Encryptable
         $value = parent::getAttribute($key);
 
         if ($value != null && $this->isEncrypted($key)) {
-            $value = Crypt::decrypt($value);
+            $value = $this->decrypt($value);
         }
 
         return $value;
@@ -33,7 +33,7 @@ trait Encryptable
     public function setAttribute($key, $value)
     {
         if ($this->isEncrypted($key)) {
-            $value = Crypt::encrypt($value);
+            $value = $this->encrypt($value);
         }
 
         parent::setAttribute($key, $value);
@@ -60,5 +60,27 @@ trait Encryptable
         return property_exists($this, 'encryptedFields')
             ? $this->encryptedFields
             : [];
+    }
+
+    /**
+     * Encrypt the given value.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    protected function encrypt($value)
+    {
+        return Crypt::encrypt($value);
+    }
+
+    /**
+     * Decrypt the given value.
+     *
+     * @param string $value
+     * @return mixed
+     */
+    protected function decrypt($value)
+    {
+        return Crypt::decrypt($value);
     }
 }
